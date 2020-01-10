@@ -77,42 +77,12 @@ The ArcGIS Pro interface is made up of three basic components:
 
 **The Data/Map Frame** – the map canvas is where your visualizations of data will show up when you had a new data layer. This is where you will view the changes that are made when you adjust symbology, when you change the order of layers, or when you produce a new data set through geo-processing  
 
-**The Table of Contents**
+**The Table of Contents** - The Table of Contents, like that in ArcMap, is where the "Layers" and datasets appear, as they are added to the map.
+
+
+![./media/map_ribbon-drop-shadow.png](./media/map_ribbon-drop-shadow.png)
 
 **Ribbon** - ArcGIS Pro uses a ribbon toolbar at the top of the interface which organizes tools into related themes, such as Map and Analysis. Other themes will appear when their context is enabled. For instance, clicking on one of the basemap layers enables the **Vector Tile Layer Appearance** tab, which provides for setting scale-dependent rendering and transparency.
-
-### Customize the interface
-
-When you first open QGIS, you might find the toolbars and panels that are neabled by default are more than your project calls for. Most panels and toolbars in the QGIS interface can be moved around by grabbing the title bar of panels, or the dotted handle on toolbars, and dragging them to the desired location in the interface. You can also use the View menu to turn panels and toobars on and off.
-
-![](./media/customize.gif)
-
-1. Toggle the visibility and move toolbars and panels until your QGIS interface resembles the image below.
-
-![](./media/customize.png)
-
-### Add a plugin  
-The first thing we would like to do is add a base map layer to our map project. We will use the **Quick Map Services** plug-in to add a base map created by [Stamen design](https://stamen.com/). QGIS uses a plug-in model to extend the functionality of the basic software. Most plug-ins are contributed by members of the QGIS community and many extend functionality by adding interactivity with external services like geocoding, routing, and base map services.
-
-1. On the **Main menu** of **QGIS**, find the **Plug-ins** menu and open the **Manage and install plugins** dialogue.  
-2. In the search box at the top of the dialogue, search for the term "QuickMapServices"    
-3. The search should return a plug-in called "QuickMapServices." 
-4. Click on the QuickMapServices plug-in name and then click the install plug-in button
-5. Once the plug-in has successfully installed, Close the plug-in management dialog.
-
-![](./media/pluginMenu.png)  
-
-### Add a basemap service layer
-
-1. Installing the **QuickMapServices** plug-in should have added a new menu item to the **QGIS Main Menu** called "Web".
-2. Click on the Web menu and from the **QuickMapServices** item select "**Settings**."
-3. Select the "**More Services**" tab and click on the "**Get contributed pack**" button. This will download a large list of web map services that can be used directly into GIS as base maps.  
-![](./media/contribpack.png)  
-4. Once the contributed pack has been downloaded click **Save** to close the dialog.
-5. Now return to the quick map services menu, and select the **Stamen> Stamen Toner Lite** base map.
-6. **Save** your **map document**.
-
-![](./media/stamenbasemap.png)
 
 ### Add an existing data layer
 Now we're going to add an existing data layer. The data layer that we will add describes our **Area Of Interest** in this study. This layer will provide us with a convenient way to orient our data frame to the area that we are interested in, as well as providing a way to limit the processing extent of certain geo-processing tools.
