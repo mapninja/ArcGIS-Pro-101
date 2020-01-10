@@ -77,23 +77,67 @@ The ArcGIS Pro interface is made up of three basic components:
 
 **The Data/Map Frame** – the map canvas is where your visualizations of data will show up when you had a new data layer. This is where you will view the changes that are made when you adjust symbology, when you change the order of layers, or when you produce a new data set through geo-processing  
 
-**The Table of Contents** - The Table of Contents, like that in ArcMap, is where the "Layers" and datasets appear, as they are added to the map.
+**The Table of Contents** - The Table of Contents, like that in ArcMap, is where the "Layers" and datasets appear, as they are added to the map. Accos teh top of the Table of Contents, you are able to change the view from "Display order" to 
 
 
-![./media/map_ribbon-drop-shadow.png](./media/map_ribbon-drop-shadow.png)
+![./media/tableofcontents.png](./media/tableofcontents.png)
 
 **Ribbon** - ArcGIS Pro uses a ribbon toolbar at the top of the interface which organizes tools into related themes, such as Map and Analysis. Other themes will appear when their context is enabled. For instance, clicking on one of the basemap layers enables the **Vector Tile Layer Appearance** tab, which provides for setting scale-dependent rendering and transparency.
+
+![./media/map_ribbon-drop-shadow.png](./media/map_ribbon-drop-shadow.png)  
 
 ### Add an existing data layer
 Now we're going to add an existing data layer. The data layer that we will add describes our **Area Of Interest** in this study. This layer will provide us with a convenient way to orient our data frame to the area that we are interested in, as well as providing a way to limit the processing extent of certain geo-processing tools.
 
-1. In the **QGIS Browser panel**, find the data folder for this workshop (Hint: look for the "**Project Home**" folder) and double-click on the **study_area.shp** file, to add it to your **map project**.
-2. In the **Layers panel**, right-click on the **study_area layer** and select "**Zoom to layer**."
-3. On the **Main menu**, enable the **Layer styling panel** from the **View>Panels menu**. 
-4. In the **Layer styling panel** select **Simple fill** from the panel at the top, and change the **Fill style** to "**No brush**." If you would like you can also change the **Stroke color** & **Stroke width** of the stroke to make it more visible against the black-and-white basemap.
-5. **Save** your **map document**.
+1. In the **Catalog panel**, right-click on the **Folders** item and click on "Add folder connection."  Browse to the data folder for this workshop, select and clikc **Add**
+2. Expand the newly added data folder, and drag-and-drop the Study_Area.shp file into your **Map** frame.
+3. Right click on the **color patch** for the newly added layer, in the Table of Contents and select **No color**
 
-![](./media/studyareaadd.png)
+### Save the project
+
+
+
+### Create a data layer from an XY table?
+
+Often the data sets that you want to work with will not come as spatial data sets. In this step we will add a table of data that contains fields with the latitude and longitude coordinates of the deaths addresses we want to analyze.
+
+1. Return to the Catalog Panel and, in the data folder, right-click on the deathAddresses.csv and select Export>Table to Point Feature Class. This will open the **XY Table to Point** Geoprocessing Tool as a tab on top of the Catalog Panel.
+2. For **Output Feature Class**, check that the feature class will be exported to the default.gdb in your project folder and replace the default name with "**Deaths**"
+3. The remaining settings should be as shown below:  
+![](./media/XYtopoints.png)  
+4. Click **Run** and wait for the points to be added to the Map panel.
+
+![](./media/deathsadded.png)
+
+### Layer symbology
+Proportional symbols on Death Addresses
+
+1. If not already, **click** on the **deathAddresses** layer to highlight it and focus the **Layer Styling panel** on this layer and use the following settings to adjust the **deathAddresses Symbology**: 
+
+| setting | value |
+|------------------:|--------------------------------|
+| Symbology Type:  | Graduated |
+| Column: | Num_Cases |
+| Symbol: | *click to change the color if you like* |
+| Legend Precision: | 1 |
+| Method: | Size |
+| Size from: | 10,50,'Map Units' |
+| Classes>Mode: | Equal Interval |
+| Classes: | 3 |
+
+Because QGIS now features live update of symbology changes you should see these changes apply as you change the setting values.  
+
+![](./media/deathsymbol-drop-shadow.png)
+
+#### Bonus: Adding Drop Shadows
+
+1. At the bottom of the Layer Styling panel, look for the "Draw Effects" option and check it, then click  on the star that becomes active.
+2. Check  the option for Drop Shadow and adjust the settings to see what effect they have.
+
+![](./media/dropshadowdeaths-drop-shadow.png)
+
+
+![](./media/add_layer.png)
 
 ### Explore navigation tools
 
