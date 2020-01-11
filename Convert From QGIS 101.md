@@ -109,23 +109,13 @@ Often the data sets that you want to work with will not come as spatial data set
 
 ![](./media/deathsadded.png)
 
-### Layer symbology
-Proportional symbols on Death Addresses
+### Layer symbology  
+#### Proportional symbols on Deaths  
 
-1. If not already, **click** on the **deathAddresses** layer to highlight it and focus the **Layer Styling panel** on this layer and use the following settings to adjust the **deathAddresses Symbology**: 
-
-| setting | value |
-|------------------:|--------------------------------|
-| Symbology Type:  | Graduated |
-| Column: | Num_Cases |
-| Symbol: | *click to change the color if you like* |
-| Legend Precision: | 1 |
-| Method: | Size |
-| Size from: | 10,50,'Map Units' |
-| Classes>Mode: | Equal Interval |
-| Classes: | 3 |
-
-Because QGIS now features live update of symbology changes you should see these changes apply as you change the setting values.  
+1. Right-click on the Deaths layer, in the Table of Contents, and select Symbology... to open the Symbology Panel tab on top of the Catalog and Geoprocessing Panels that are already opened.
+2. Use the Drop-down to change the Primary Symbology to **Proportional Symbols** and set the Field=Num_Cases
+3. Note in the **Histogram** and the bottom of the panel that the range of values for the Num_Cases is 1-8. Set the Minimum size = 1.00 and the Maximum size = 18, accordingly.
+4. Click on the Template for the symbol and select Circle 3 (40%). Return to the Symbology panel by clicking on the back arrow at the top of the panel.  
 
 ![](./media/deathsymbol-drop-shadow.png)
 
