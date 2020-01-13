@@ -164,15 +164,17 @@ Often, we want to be able to move around in our data frame examining different p
 
 ### The Layers Tools
 
-![](./media/layertoolbar.png)  The **Layer tools** changes the Extent of Map Canvas, without changing the scale.
-Click on the Pan Tool and use it to move around the Map Canvas.
+![](./media/layertoolbar.png)  
 
-### THe Selection Tools
+The **Layer tools** provide the ability to Add or change the basemap for the Map Frame, as well as adding existing data from a number of sources (File, Web Services, etc...). 
+### The Selection Tools
 
-![](./media/selectiontoolbar.png)  The **Selection tools** changes the Extent of your Map Canvas to the
-feature being selected, without changing the scale
+![](./media/selectiontoolbar.png)  
 
-### Working with CRS
+The **Selection tools** Provide ways to select features within a layer interactively, by intersection with other layers, as well as by Attributes. 
+
+
+# Working with CRS
 Here we will examine the default **Coordinate Reference System**, which should currently be sent to **Web Mercator** and we will change it to **Universal Transverse Mercator** to match our study area layer.  
 
 #### Examine the CRS of a data layer
@@ -200,72 +202,25 @@ Here we will examine the default **Coordinate Reference System**, which should c
 
 You should now see that the base map and study area layer in the map canvas have rotated slightly and are now oriented north-south.
 
-### Create a data layer from an XY table?
-
-Often the data sets that you want to work with will not come as spatial data sets. In this step we will add a table of data that contains fields with the latitude and longitude coordinates of the deaths addresses we want to analyze.
-
-1. Click on the **Add Delimited Text Layer** button ![](./media/delimitedlayer.png)to open the Data Source Manager dialog.
-2. For **File Name**, browse to the **data** folder and select the **deathAddresses.csv**
-3. Set the remainder of the settings as follows, and click **Add & Close** to import the layer:    
-
-| setting | value |
-|--------------------------:|--------------------------------------------------------------------|
-| File Format:  | CSV |
-| Record and Field Options: | "First records has field names" = true "Detect field types" = true |
-| Geometry Definition: | Point coordinates: "X field" = 'xcoord, "Y field" = 'ycoord' |
-| Geometry CRS: | EPSG:4326 - WGS 84 |
-
-
-![](./media/datasourcemanager.png)  
-
-![](./media/addedpoints-drop-shadow.png)
-
-### Layer symbology
-Proportional symbols on Death Addresses
-
-1. If not already, **click** on the **deathAddresses** layer to highlight it and focus the **Layer Styling panel** on this layer and use the following settings to adjust the **deathAddresses Symbology**: 
-
-| setting | value |
-|------------------:|--------------------------------|
-| Symbology Type:  | Graduated |
-| Column: | Num_Cases |
-| Symbol: | *click to change the color if you like* |
-| Legend Precision: | 1 |
-| Method: | Size |
-| Size from: | 10,50,'Map Units' |
-| Classes>Mode: | Equal Interval |
-| Classes: | 3 |
-
-Because QGIS now features live update of symbology changes you should see these changes apply as you change the setting values.  
-
-![](./media/deathsymbol-drop-shadow.png)
-
-#### Bonus: Adding Drop Shadows
-
-1. At the bottom of the Layer Styling panel, look for the "Draw Effects" option and check it, then click  on the star that becomes active.
-2. Check  the option for Drop Shadow and adjust the settings to see what effect they have.
-
-![](./media/dropshadowdeaths-drop-shadow.png)
-
+## Working with spatial data
 ### Viewing the Attribute Table
 
-Up to this point we've been mostly concerned with building a new map project. Now we'd like to take a peek at some of the data behind the Map Canvas.
+Up to this point we've been mostly concerned with building a new map project. Now we'd like to take a peek at some of the data behind the Map Frame.
 
-1. Right-click on the **deathAddresses** layer in the **Layers** panel and select **Open Attribute Table**.
+1. Right-click on the **Deaths** layer in the **Table of Contents** and select **Attribute Table**.
 2. Note that you can sort fields, scroll, select by attributes, etc...
 
 ### Statistics on a field  
 
-As mentioned, above, the **Num_Cases** field in the Death Addresses data indicates the number of deaths at each address in the dataset. You can get a simple statistical snapshot of the variable from the Attribute Table.
+As mentioned, above, the **Num_Cases** field in the Deaths layer indicates the number of deaths at each address in the dataset. You can get a simple statistical snapshot of the variable from the Attribute Table.
 
-1. Close the Attribute Table
+1. Right-click on the header of the **Num_Cases** field 
 2. On the pull-down menu go to **Vector > Analysis Tools > Basic Statistics for Fields**
 3. On the window select **Death Addresses** as the Input Vector layer and **Num_Cases** as the Target field.
 4. **Click Run** and **Close** 
 5. Look for the **Results Viewer** panel which should have been activated, and click on the **Hyperlink** to open the summary in a web browser.  
 ![](./media/resultsviewer-drop-shadow.png)   
 
-## Creating spatial data
 
 ### Finding a map
 
