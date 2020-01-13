@@ -119,58 +119,40 @@ Often the data sets that you want to work with will not come as spatial data set
 3. Note in the **Histogram** and the bottom of the panel that the range of values for the Num_Cases is 1-8. Set the Minimum size = 1.00 and the Maximum size = 18, accordingly.
 4. Click on the Template for the symbol and select Circle 3 (40%). Return to the Symbology panel by clicking on the back arrow at the top of the panel.  
 
-![](./media/deathsymbol-drop-shadow.png)
+![](./media/proportionalsymbols.png)
 
-#### Bonus: Adding Drop Shadows
+#### Bonus: Setting a Reference Scale
 
-1. At the bottom of the Layer Styling panel, look for the "Draw Effects" option and check it, then click  on the star that becomes active.
-2. Check  the option for Drop Shadow and adjust the settings to see what effect they have.
+1. Now that you have created a symbology, zoom in and out of the daMap/Data Frame to see how the symbology interacts with the scale of the map. Note that the symbology remains the same size, regardless of the scale that you are viewing the map. 
+2. Right-click on the **Map** item at the top of the **Table of Contents** and select **Properties**, to open the **Map Properties** dialog.
+3. In the **General** table, change the **Reference scale** option to 1:5000. Click OK to apply the setting.
+4. Zoom in and out of the Map to see that the symbols now change size with the scale of the map. 
 
-![](./media/dropshadowdeaths-drop-shadow.png)
+![](./media/referencescale.png)
+
+### Explore Map tools
+
+Now we will explore the **Map tools** in ArcGIS Pro. 
+
+The **Map/Navigate Toolbar** provides the bulk of the tools for navigation in
+the **Map Frame**. Navigation in the ArcGIS Pro Map is accomplished using the mouse to click-&-drag, and the scrolling wheel to zoom in and out, similar to web "slippy" maps. 
+
+![](./media/navigatetoolbar.png) 
 
 
 
-### Explore navigation tools
+* The **Zoom Tools** allow you to:  
+![](./media/zoomtools.png) 
+	* Zoom to Full Extent 
+	* Zoom to Selection 
+	* Fixed Zoom In & Out 
+	* Next & Previous Extent
 
-Now we will explore the **basic navigation tools** in QGIS. These are the tools that you will 
 
-The **Map Navigation Toolbar** provides the bulk of the tools for navigation in
-the **Map Canvas**. Most of them are fairly obvious. Take a moment to explore
-each of these tools, and how it works.
-
-![](./media/image13.png)  The **Touch Zoom and Pan** - Works if you have a notebook with touch screen.
-Zoom in and zoom out using double finger touch.
-
-![](./media/image14.png)  The **Pan Map** changes the Extent of Map Canvas, without changing the scale.
-Click on the Pan Tool and use it to move around the Map Canvas.
-
-![](./media/image15.png)  The **Pan Map to Selection** changes the Extent of your Map Canvas to the
-feature being selected, without changing the scale
-
-![](./media/image16.png)  The **Zoom In Tool** and  ![](./media/image17.png)  **Zoom Out** works exactly as you would expect. Click on the Zoom Tool, and drag
-a box to enclose the Continental United States. You can also single-click with
-this tool to use it as a Fixed Zoom Tools.
-
-![](./media/image18.png)  The **Zoom Full** zooms you to the full extent of the layer in your Map Project with the largest spatial extent. This can sometimes be problematic if you are
-working at a local level, but using one or more layers that are global in extent
-(for example, many of the network base map services).
-
-![](media/image19.png)  The **Zoom to Selection** changes the Extent of your Map Canvas and zooms in or
-out to the selected feature.
-
-### Scale
-
-When zooming in or out, the **Scale Values** at the bottom page changes. Remember that the bigger the number (**1:60,000,000**), the larger the area being displayed. Although **60,000,000** is bigger than **60**, a scale **1:60,000,000** is a small scale and **1:60** is a large scale because the division of **1/60,000,000** is smaller than **1/60**.
-
-![](./media/image20-drop-shadow.png)
-
-![](./media/image22.png)  The **Zoom to Layer** to a specific layer extent.
-
-![](./media/image23.png)  The **Zoom Last** and ![](./media/image24.png) **Zoom Next** works as a Redo or Undo tool **ONLY** for the Scale/Extent in your Map Canvas. This tool is particularly useful if you change your Map Extent inadvertently.
-
-![](./media/image25.png)  The **Refresh Button** will reload your Map Extent
 
 ### Spatial Bookmarks
+
+![](./media/bookmarks.png) 
 
 Often, we want to be able to move around in our data frame examining different parts of the map zooming in and out, and then returning to our primary area of interest. This can be easily accommodated through the use of spatial bookmarks. Here you'll create a spatial bookmark which allows us to quickly return to the area that we are interested in.
 
@@ -179,6 +161,16 @@ Often, we want to be able to move around in our data frame examining different p
 3. Click on the **Add Bookmark** button and rename the resulting Spatial Bookmark: "**SOHO**"  
 ![](./media/spatialbookmark.png)
 4. Click on the **Zoom Full** button to zoom to the world, then use the **Zoom to bookmark ** button to return to your Area of Interest.
+
+### The Layers Tools
+
+![](./media/layertoolbar.png)  The **Layer tools** changes the Extent of Map Canvas, without changing the scale.
+Click on the Pan Tool and use it to move around the Map Canvas.
+
+### THe Selection Tools
+
+![](./media/selectiontoolbar.png)  The **Selection tools** changes the Extent of your Map Canvas to the
+feature being selected, without changing the scale
 
 ### Working with CRS
 Here we will examine the default **Coordinate Reference System**, which should currently be sent to **Web Mercator** and we will change it to **Universal Transverse Mercator** to match our study area layer.  
