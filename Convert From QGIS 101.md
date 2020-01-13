@@ -93,8 +93,10 @@ Now we're going to add an existing data layer. The data layer that we will add d
 2. Expand the newly added data folder, and drag-and-drop the Study_Area.shp file into your **Map** frame.
 3. Right click on the **color patch** for the newly added layer, in the Table of Contents and select **No color**
 
-### Save the project
 
+![](./media/add_layer.png)
+
+### Save the project
 
 
 ### Create a data layer from an XY table?
@@ -127,7 +129,6 @@ Often the data sets that you want to work with will not come as spatial data set
 ![](./media/dropshadowdeaths-drop-shadow.png)
 
 
-![](./media/add_layer.png)
 
 ### Explore navigation tools
 
