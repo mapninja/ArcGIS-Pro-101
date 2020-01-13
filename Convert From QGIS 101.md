@@ -174,7 +174,7 @@ The **Layer tools** provide the ability to Add or change the basemap for the Map
 The **Selection tools** Provide ways to select features within a layer interactively, by intersection with other layers, as well as by Attributes. 
 
 
-# Working with CRS
+<!--# Working with CRS
 Here we will examine the default **Coordinate Reference System**, which should currently be sent to **Web Mercator** and we will change it to **Universal Transverse Mercator** to match our study area layer.  
 
 #### Examine the CRS of a data layer
@@ -200,7 +200,7 @@ Here we will examine the default **Coordinate Reference System**, which should c
 2. Click on the ```EPSG:32630 WGS 84 / UTM zone 30N``` and then click OK to change the CRS of the Project to the same as the layer **Study_Area**.
 3. Save your changes by clicking on the Save button ![](./media/savebutton.png) on the Project toolbar.  
 
-You should now see that the base map and study area layer in the map canvas have rotated slightly and are now oriented north-south.
+You should now see that the base map and study area layer in the map canvas have rotated slightly and are now oriented north-south.-->
 
 ## Working with spatial data
 ### Viewing the Attribute Table
@@ -214,15 +214,17 @@ Up to this point we've been mostly concerned with building a new map project. No
 
 As mentioned, above, the **Num_Cases** field in the Deaths layer indicates the number of deaths at each address in the dataset. You can get a simple statistical snapshot of the variable from the Attribute Table.
 
-1. Right-click on the header of the **Num_Cases** field 
-2. On the pull-down menu go to **Vector > Analysis Tools > Basic Statistics for Fields**
+1. Right-click on the header of the **Num_Cases** field and select **Statistics**
+2. A histogram of the data distribution will appear over the top of the Attribute Table, and a "Distribution of Num_Cases" panel will appear in the tabbed panel area, on the right. 
 3. On the window select **Death Addresses** as the Input Vector layer and **Num_Cases** as the Target field.
 4. **Click Run** and **Close** 
 5. Look for the **Results Viewer** panel which should have been activated, and click on the **Hyperlink** to open the summary in a web browser.  
-![](./media/resultsviewer-drop-shadow.png)   
 
 
-### Finding a map
+![](./media/statisticsonafield.png)   
+
+## Creating Spatial Data
+### Finding a reference map
 
 There are many venues for searching for old maps as sources for spatial data and I've listed a few of our favorites, below. Of course, there are many considerations of scale, authority, projections, etc... when using a scanned map as a data source, it is possible to scan and georeference just about any map you can find reference data (another map to georeference to) for.
 
@@ -230,20 +232,20 @@ There are many venues for searching for old maps as sources for spatial data and
 * [DavidRumsey.com](DavidRumsey.com)
 * [OldMapsOnline.com](OldMapsOnline.com)
 
-### Finding an already georeferenced map
+### Finding an already georeferenced map from DavidRumsey.com
 
 We'll start by looking at this map [[Gegend von London 1853](https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~298861~90066747:Gegend-von-London-1853?sort=Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No&qvq=w4s:/where%2FLondon%2B%252528England%252529%2Fwhen%2F1854;q:london%201854;sort:Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No;lc:RUMSEY~8~1&mi=1&trs=2)] of London on [https://davidrumsey.com](https://davidrumsey.com). It already has a "**Georeferenced** version, which can be viewed by clicking on the **Georeferencer** button at the top of the page.
 
 ![](./media/Gegend-drop-shadow.png)
 
-David Rumsey makes Open Geospatial Consortium (OGC) compliant services available for  georeferenced maps on his site. This means that you can use the maps directly in most modern GIS applications, including Arc GIS, QGIS, Arc  GIS Online, etc...
+David Rumsey makes Open Geospatial Consortium (OGC) compliant services available for  georeferenced maps on his site. This means that you can use the maps directly in most modern GIS applications, including ArcGIS Pro, QGIS, ArcGIS Online, etc...
 
-### Adding a DavidRumsey.com map to QGIS
+### Adding a DavidRumsey.com WMTS map Service to ArcGIS Pro
 
 Here is the **Web Map Tile Service WMTS URL** for the Gegend map:  
 
 ```http
-https://maps.georeferencer.com/georeferences/435516159934/2019-02-19T17:27:12.514288Z/wmts?key=mpIMvCWIYHCcIzNaqUSo&SERVICE=WMTS&REQUEST=GetCapabilities
+https://maps.georeferencer.com/georeferences/28da2318-c4b3-5f25-83dc-3da27859fea2/2019-02-19T17:27:12.514288Z/wmts?key=mpIMvCWIYHCcIzNaqUSo&SERVICE=WMTS&REQUEST=GetCapabilities
 ```
  
 This URL provides access to the georeferenced map outside of the DavidRumsey.com website.
@@ -255,7 +257,7 @@ This URL provides access to the georeferenced map outside of the DavidRumsey.com
 | Setting | Value |
 |--------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Name: | Gegend Map |
-| URL: | ```https://maps.georeferencer.com/georeferences/435516159934/2019-02-19T17:27:12.514288Z/wmts?key=mpIMvCWIYHCcIzNaqUSo&SERVICE=WMTS&REQUEST=GetCapabilities``` |   
+| URL: | ```https://maps.georeferencer.com/georeferences/28da2318-c4b3-5f25-83dc-3da27859fea2/2019-02-19T17:27:12.514288Z/wmts?key=mpIMvCWIYHCcIzNaqUSo&SERVICE=WMTS&REQUEST=GetCapabilities``` |   
 
 ![](./media/createwmtsconnect.png)   
 
