@@ -224,52 +224,6 @@ As mentioned, above, the **Num_Cases** field in the Deaths layer indicates the n
 ![](./media/statisticsonafield.png)   
 
 ## Creating Spatial Data
-### Finding a reference map
-
-There are many venues for searching for old maps as sources for spatial data and I've listed a few of our favorites, below. Of course, there are many considerations of scale, authority, projections, etc... when using a scanned map as a data source, it is possible to scan and georeference just about any map you can find reference data (another map to georeference to) for.
-
-* [earthworks.stanford.edu](earthworks.stanford.edu)
-* [DavidRumsey.com](DavidRumsey.com)
-* [OldMapsOnline.com](OldMapsOnline.com)
-
-### Finding an already georeferenced map from DavidRumsey.com
-
-We'll start by looking at this map [[Gegend von London 1853](https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~298861~90066747:Gegend-von-London-1853?sort=Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No&qvq=w4s:/where%2FLondon%2B%252528England%252529%2Fwhen%2F1854;q:london%201854;sort:Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No;lc:RUMSEY~8~1&mi=1&trs=2)] of London on [https://davidrumsey.com](https://davidrumsey.com). It already has a "**Georeferenced** version, which can be viewed by clicking on the **Georeferencer** button at the top of the page.
-
-![](./media/Gegend-drop-shadow.png)
-
-David Rumsey makes Open Geospatial Consortium (OGC) compliant services available for  georeferenced maps on his site. This means that you can use the maps directly in most modern GIS applications, including ArcGIS Pro, QGIS, ArcGIS Online, etc...
-
-### Adding a DavidRumsey.com WMTS map Service to ArcGIS Pro
-
-Here is the **Web Map Tile Service WMTS URL** for the Gegend map:  
-
-```http
-https://maps.georeferencer.com/georeferences/28da2318-c4b3-5f25-83dc-3da27859fea2/2019-02-19T17:27:12.514288Z/wmts?key=mpIMvCWIYHCcIzNaqUSo&SERVICE=WMTS&REQUEST=GetCapabilities
-```
- 
-This URL provides access to the georeferenced map outside of the DavidRumsey.com website.
-
-1. Select the WMTS URL, above, and copy it to your clipboard using right-click copy, or keyboard shortcuts, if you know them.  
-2. On the Main Menu **Layer>Add Layer>Add WMS/WMTS Layer** to open the **Data Source Manager**
-3. Click on the **New** button to open the **Create a New WMS/WMTS Connection** dialog:  
-
-| Setting | Value |
-|--------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Name: | Gegend Map |
-| URL: | ```https://maps.georeferencer.com/georeferences/28da2318-c4b3-5f25-83dc-3da27859fea2/2019-02-19T17:27:12.514288Z/wmts?key=mpIMvCWIYHCcIzNaqUSo&SERVICE=WMTS&REQUEST=GetCapabilities``` |   
-
-![](./media/createwmtsconnect.png)   
-
-4. Click OK to dismiss the dialog and save the connection  
-5. Click **Connect**  
-![](./media/connectwmts.png)    
-
-6. In the **Tilesets** tab, highlight the Gegend map WMTS layer item at the top and click **Add & Close** to close the dialog and return to the **QGIS Map Canvas**  
-7. **Right-click** on the **Gegend von London 1853** layer in the **Layer panel** and select **Zoom to layer**  
-8. Use the **Navigation Tools** to explore the map service at several different scales and extents.  
-
-![](./media/gegendWMTS-drop-shadow.png)
 
 ### Georeference a map  
 
@@ -337,6 +291,52 @@ If the last section didn't go well, add the ```John_Snow_Map.tif``` from the **/
 6. Click on Buffer tab and enable the **Draw text buffer** option. 
 
 ![](./media/labels.png)
+
+
+### Finding an already georeferenced map from DavidRumsey.com
+
+There are many venues for searching for old maps as sources for spatial data and I've listed a few of our favorites, below. Of course, there are many considerations of scale, authority, projections, etc... when using a scanned map as a data source, it is possible to scan and georeference just about any map you can find reference data (another map to georeference to) for.
+
+* [earthworks.stanford.edu](earthworks.stanford.edu)
+* [DavidRumsey.com](DavidRumsey.com)
+* [OldMapsOnline.com](OldMapsOnline.com)
+
+We'll start by looking at this map [[Gegend von London 1853](https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~298861~90066747:Gegend-von-London-1853?sort=Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No&qvq=w4s:/where%2FLondon%2B%252528England%252529%2Fwhen%2F1854;q:london%201854;sort:Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No;lc:RUMSEY~8~1&mi=1&trs=2)] of London on [https://davidrumsey.com](https://davidrumsey.com). It already has a "**Georeferenced** version, which can be viewed by clicking on the **Georeferencer** button at the top of the page.
+
+![](./media/Gegend-drop-shadow.png)
+
+David Rumsey makes Open Geospatial Consortium (OGC) compliant services available for  georeferenced maps on his site. This means that you can use the maps directly in most modern GIS applications, including ArcGIS Pro, QGIS, ArcGIS Online, etc...
+
+### Adding a DavidRumsey.com WMTS map Service to ArcGIS Pro
+
+Here is the **Web Map Tile Service WMTS URL** for the Gegend map:  
+
+```http
+https://maps.georeferencer.com/georeferences/28da2318-c4b3-5f25-83dc-3da27859fea2/2019-02-19T17:27:12.514288Z/wmts?key=mpIMvCWIYHCcIzNaqUSo&SERVICE=WMTS&REQUEST=GetCapabilities
+```
+ 
+This URL provides access to the georeferenced map outside of the DavidRumsey.com website.
+
+1. Select the WMTS URL, above, and copy it to your clipboard using right-click copy, or keyboard shortcuts, if you know them.  
+2. On the Main Menu **Layer>Add Layer>Add WMS/WMTS Layer** to open the **Data Source Manager**
+3. Click on the **New** button to open the **Create a New WMS/WMTS Connection** dialog:  
+
+| Setting | Value |
+|--------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Name: | Gegend Map |
+| URL: | ```https://maps.georeferencer.com/georeferences/28da2318-c4b3-5f25-83dc-3da27859fea2/2019-02-19T17:27:12.514288Z/wmts?key=mpIMvCWIYHCcIzNaqUSo&SERVICE=WMTS&REQUEST=GetCapabilities``` |   
+
+![](./media/createwmtsconnect.png)   
+
+4. Click OK to dismiss the dialog and save the connection  
+5. Click **Connect**  
+![](./media/connectwmts.png)    
+
+6. In the **Tilesets** tab, highlight the Gegend map WMTS layer item at the top and click **Add & Close** to close the dialog and return to the **QGIS Map Canvas**  
+7. **Right-click** on the **Gegend von London 1853** layer in the **Layer panel** and select **Zoom to layer**  
+8. Use the **Navigation Tools** to explore the map service at several different scales and extents.  
+
+![](./media/gegendWMTS-drop-shadow.png)
 
 ## Basic spatial data analysis
 
