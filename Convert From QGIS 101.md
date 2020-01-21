@@ -306,46 +306,19 @@ Now that you have created the Voronoi polygon layer, you will “allocate” eac
 1. Right-click on the Deaths layer and go to **Joins and Relates>Spatial Join** to open the **Spatial Join** Geoprocessing tool.
 2. Because the tool was opened from the **Deaths** layer, the **Target Features:** are correctly set. Use the drop-down to select **Voronoi** as the **Join Features** and change the **Output Feature Class** to **Deaths_Allocated**. The remaining default settings should appropriate.  
 ![](./media/spatialjoin.png)  
-3. A new layer, called **Deaths_Allocated** will be added to the **Table of Contents**. Right-click on the new **Deaths_Allocated** layer and open the **Attribute Table** to confirm that each record now has the "Label" for the the nearest **Water Pump**.   
+3. A new layer, called **Deaths_Allocated** will be added to the **Table of Contents**. Right-click on the new **Deaths_Allocated** layer and open the **Attribute Table** to confirm that each record now has the "**Label**" for the the nearest **Water Pump**.   
+![](./media/labelfield.png)  
+
 ### Summary Statistics
 
-Finally, we would like to summarize the deaths in the outbreak, grouping our summary by the name of the Water Pump that each Death Address is nearest. We will do this using the **Group Stats Tool** which allows us to do a statistical summary similar to the one we did earlier on the entire data set, but this time grouped by nearest water pump.
+Finally, we would like to summarize the deaths in the outbreak, grouping our summary by the name of the Water Pump that each Death Address is nearest. We will do this using the **Summary Statistics Tool** which allows us to do a statistical summary similar to the one we did earlier on the entire data set, but this time grouped by nearest water pump.
+
+1. With the **Deaths_Allocated Attribute Table** still open, right-click on the header for the **Num_Cases** column and select **Summarize** to open the **Summary Statistics** Geoprocessing tool.
+2. Use the drop-downs to set the Statistics Fields as shown, below:  
+![](./media/summarystats.png)  
+3. Set the **Case field** to the **Label** column, in order to group the summary by nearest **Water Pump**
 
 
-1.  On the pull-down menu go to **Plugins\> Manage and install plugins.**
-
-2.  On the Plugins window search, type **Group Stats** and select it.
-
-3.  Click on **Install plugin.**
-
-4.  Close the **Plugin Window.**  
-![](media/image007-drop-shadow.png)
-
-
-After the installation a **GroupStats Tool** ![](media/image008.png) appears on the Vector Toolbar.
-
-1. **Click** the **Group Stats tool**
-
-2. **Select Deaths_Allocated** as Layer.  
-![](media/image009-drop-shadow.png)
-
-Drag from **Fields** to **Column**: average, count and sum. 
-
-On **Rows,** drag Name (originally from the Water_Pump data layer), and 
-
-on **Value** drag **Num_Cases.**
-
-1.  **Click** on **Calculate** to visualize the summary table.
-
-2.  **Click** the Sum field header on the resulting table to **Sort descending** on the **SUM\_Num\_Cases** field.
-
-Note that the **Broadwick Pump** has the highest value for two of three
-significant attributes: **Count** (No. of households), **Sum** (Total Deaths),
-and **Average** (Mean Deaths per Household).
-
-1.  On the **Group Stats Window,** go the **Data\> Save all to CSV file. Save** the **Ouput Table** to your **Data** Folder and name it **Deaths\_Summary\_by\_Pumps**.
-
-2.  **Close** the Group Stats Window
 
 ## Basic Measures of Spatial Central Tendency
 
