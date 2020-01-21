@@ -247,7 +247,7 @@ Now we would like to digitize the locations of the **Water Pumps** in the neighb
 3. Click on the **Create** tool button, and note that a set of templates for each of your vector data layers will appear in as a panel on the right.  
 ![](./media/createbutton.png)  
 4. Click on the **Water Pumps** template, in the **Create Features** panel on the right, to select the Water Pump point.  
-5. Locate a Water Pump in the **snow_map.png**  layer and click on it to place the point. 
+5. Locate a Water Pump in the **snow_map.png** layer and click on it to place the point. 
 6. In the Attribute Table, below, double-click on the new record, under the **Label** field and enter a value for the Label field (we will use the name of the nearest street), and hit **RETURN**.
 7. Repeat for the remaining 12 water pumps in the Snow Map.  
 ![](./media/editpoint.png)  
@@ -289,22 +289,11 @@ This URL provides access to the georeferenced map outside of the DavidRumsey.com
 
 Thiessen polygons allocate space in an area of interest to a single feature per polygon. That is, within a Thiessen polygon, all other features are closer to the point that was used to generate that polygon than to any other point in the feature set. In this case, we will create a set of Thiessen polygons based upon the locations of the Water Pumps in our project. This will allow us to easily allocate all of the points in our death addresses dataset to the water pump that they are nearest using a simple spatial join.
 
-1. On the **Tools Tape** at the top of **ArcGIS Pro**, click on the **Analysis tab**, then click on the **Tools button** . 
-2. Go to the **Processing Toolbox Window** and change the view from **Simplified Interface** to **Advanced Interface.**
-3. Search for **Voronoi.**
-4. **Double–click** the **Voronoi polygons** tool under **Grass commands.**
-5. On the v.voronoi tool window input the select **Water Pumps** as the **Input points layer.**  
-![](media/image004-drop-shadow.png)
-
-6. On **Grass region, click the 3 dots** and select **Use layer/canvas extent.**
-1.  On the **Select extent window,** scroll down to find **Study Area.**
-2.  **Click OK**
-3.  **Click the 3 dots** beside the Voronoi diagram option, and **select Save to file.**
-4.  Browse to the **EX_02_Snow_Map folder** and **save** the shapefile as **Voronoi.**
-5.  **Click Run**  
-![](media/image005-drop-shadow.png)
-
-6. **Open** the Attribute Table of the **Voronoi** layer to explore how each Voronoi Polygon has the name of the pump enclosed.
+1. At the top of **ArcGIS Pro**, click on the **Analysis tab**, then click on the **Tools button**, which will open the **Geoprocessing** panel at the right. 
+2. Using the **Find Tools** box, Search for **Voronoi** and click on the **Create Thiessen Polygons** tool, in the results.
+4. Set the options as: **Input Features:** Water Pumps; **Output Feature Class:** Voronoi: **Output Fields:** All fields.
+5. Click on the **Environments** tab and set the **Extent:** Same as: Study_Area; and click **Run**.  
+![](media/voronoi.png)  
 
 ### Spatial Join (Point Aggregation)
 
