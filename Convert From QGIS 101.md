@@ -293,31 +293,20 @@ Thiessen polygons allocate space in an area of interest to a single feature per 
 2. Using the **Find Tools** box, Search for **Voronoi** and click on the **Create Thiessen Polygons** tool, in the results.
 4. Set the options as: **Input Features:** Water Pumps; **Output Feature Class:** Voronoi: **Output Fields:** All fields.  
 ![](./media/voronoitool.png)  
-5. Click on the **Environments** tab and set the **Extent:** Same as: Study_Area; and click **Run**.  
+5. Click on the **Environments** tab and set the **Extent:** **Same as:Study_Area**; and click **Run**.  
+6. The result will be (as shown below) a layer of polygons that define the area closest to the water pumps that generated them.   
 ![](media/voronoi.png)  
+7. Right-click on the new Voronoi layer and Open the Attribute table. Note that it contains the fields from the **Water Pumps**, including the **Label** field.  
 
 ### Spatial Join (Point Aggregation)
 
-Now that you have created the Voronoi polygon layer, you will “allocate” each of the deaths to one of the Voronoi polygons. To do this, we will use the **Join Attributes by Location** tool. Conceptually, what we will be doing is like passing our points through the polygons so that the polygon's attributes "stick" to the points.  
+Now that you have created the Voronoi polygon layer, you will “allocate” each of the deaths to one of the Voronoi polygons. To do this, we will use a **Spatial Join**. Conceptually, what we will be doing is like passing our points through the polygons so that the polygon's attributes "stick" to the points.  
 
-![](media/spatialJoin.png)
 
-1. On the pull-down menu go to menu go to **Vector \> Data Management Tools \> Join attributes by location**
-
-1.  Select **Death Addresses** as the Target vector layer and
-    **Water_Pump_Voronoi** as the Join vector layer.
-
-2.  **Click Browse** to save the **Output GeoJSON** as **Deaths_Allocated** in
-    your **Data** Folder.
-
-3.  **Click OK**
-
-4.  Click **Yes** to add the new layer to the TOC (Table of Contents) and Close
-    the Join the attributes by location window.
-
-5.  The resulting layer is added to the Map Canvas. **Open** its **attribute table** to confirm that the attributes of the Water Pumps have been transferred:  
-![](media/joinedTable.png)
-
+1. Right-click on the Deaths layer and go to **Joins and Relates>Spatial Join** to open the **Spatial Join** Geoprocessing tool.
+2. Because the tool was opened from the **Deaths** layer, the **Target Features:** are correctly set. Use the drop-down to select **Voronoi** as the **Join Features** and change the **Output Feature Class** to **Deaths_Allocated**. The remaining default settings should appropriate.  
+![](./media/spatialjoin.png)  
+3. A new layer, called **Deaths_Allocated** will be added to the **Table of Contents**. Right-click on the new **Deaths_Allocated** layer and open the **Attribute Table** to confirm that each record now has the "Label" for the the nearest **Water Pump**.   
 ### Summary Statistics
 
 Finally, we would like to summarize the deaths in the outbreak, grouping our summary by the name of the Water Pump that each Death Address is nearest. We will do this using the **Group Stats Tool** which allows us to do a statistical summary similar to the one we did earlier on the entire data set, but this time grouped by nearest water pump.
