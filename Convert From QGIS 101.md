@@ -202,45 +202,46 @@ Our goal in this workshop is to explore the cholera outbreak of 1854 and determi
 
 1. Browse to the data folder and drag-and-drop the **snow_map.png** image into the Map of your project. 
 2. Click Yes when prompted to "Build pyramids..."
+![](./media/pyramids.png)
 3. Note that the layer is added to the Table of Contents, but doesn't' not yet appear in the Map Data Frame.
-4. Click on the **snow_map.png** Layer to select it and then click on the Imagery tab to activate the Imagery tools. Click on the Georeference Tool to open the Georeferencing Tools and start georeferencing.
+4. Click on the **snow_map.png** Layer to select it and then click on the Imagery tab to activate the Imagery tools. Click on the Georeference Tool to open the Georeferencing Tools and start georeferencing.  
+![](./media/georeferencebutton.png)
 5. Right-click and "Zoom to..." the **snow_map.png**, then use the mouse scroll button to zoom to the upper left corner of the image, where the **Regent Circus** can be found.
 6. Click on the **Add Control Points** tool and then place a Control Point Link at the center of Regent Circus.
+![](./media/firstgcplink.png)
 7. Right-click and "Zoom to..." the **Study_Area** layer. Use the mouse scroll wheel to zoom into the same area of Regent Circus, and place the second GCP link at that location. Note that the map image will automatically "snap" these two GCP links together. 
+![](./media/secondgcplink.png)
 8. Use the scroll wheel to zoom out and then into the bottom right corner of the **snow_map.png** layer to find the Intersection of **Oxendon Street & Coventry Street**. Add a Ground Control Point link to the Southeast corner of the intersection.
 9. Toggle off the visibility of the **snow_map.png** and **right-click>Zoom to...** the **Study_Area** layer. 
 10. Locate the corresponding intersection in the now visible basemap and place the second link of the Control Point. 
 11. Toggle the visibility of the **snow_map.png** layer to see that it has "snapped" these two links together, as before. 
 12. Locate and place 3 more **Ground Control Points** (1 in each remaining corner and one near the center).
+![](./media/allgcp.png)
 13. Click on the **Export Control Points** button and save the control points you have created to your data folder as GCP.TXT.
-14. 
-
-
+14. Click on the **Save** button of the **Georeference** toolbar, then click on the **Close Georeference** button. 
+15. Browse to the **data** folder using your Windows File Explorer and note that new files have been added to the folder. They include **snow_map.png.pgwx**, which is the "World File" for the image you just georeferenced. As long as this file sits next to the **snow_map.png** file, GIS applications, such as Google Earth Desktop, ArcGIS, QGIS, etc... should now be able to colocate this image with other datasets. 
+![](./media/worldfile.png)
  
 ### Digitize features from a georeferenced map
 
 If the last section didn't go well, add the ```John_Snow_Map.tif``` from the **/backup_data/**  
 
-1. On the **Main Menu**, go to **Layer>Create Layer** and select the **New Shapefile** option
-2. Use the following settings:
+Now we would like to digitize the locations of the **Water Pumps** in the neighborhood, from the **john_snow.png**. To do this, we first need to create and  "empty" Feature Layer in our default.gdb for the project we are working on. 
 
-| Setting | Value |
-|-----------------------:|-----------------------------------|
-| File name: | Save to /data/ as water_pumps.shp |
-| File encoding: | system |
-| Geometry type: | Point |
-| Additional dimensions: | None |
-| CRS: | EPSG:4326 - WGS 84 |
+1. Return to the Catalog panel and browse to **Databases**, right-click on the **Default.gdb** and go to **New>Feature Class** to begin the New Feature Class dialog.  
+![](./media/newfeatureclass.png)  
+2. In the resulting dialog, use these settings: **Name:** pumps; **Alias:** Water Pumps; **Feature Class Type:** Point. Click **Next**.  
+![](./media/newfcstep1.png)  
+3. Add a Field: **Field Name:** Label; **Data Type:** Text. Click **Next**.  
+![](./media/newfcstep2.png)  
+4. Set the **Spatial Reference** to **GCS WGS 1984**. Click **Finish**. 
+![](./media/newfcstep3.png)   
 
-![](./media/newshapefile.png)
-
-3. Add a New Field, add a **text  data** field called 'Label'
-4. Click OK to create the empty shapefile and add it as a layer.
 
 ### Add points to your shapefile
 
-1. Right-click on the water_pumps layer and select **Toggle Editing**
-2. Click on the Add Point Feature button ![](./media/editpoint.png)and add a point for one of the Water Pumps in the John Snow map. 
+1. Drag-and-Drop the new **pumps** Feature Class into your Map Frame. Note that the layer is added to the Table of Contents, using the alias: **Water Pumps**. 
+2.   
 3. Label the point with the street it is on in the **Feature Attributes pop-up** and click ok to create the feature.
 ![](./media/featureattributes.png)
 4. Continue digitizing Until you have captured all 12 water pumps in the map.
