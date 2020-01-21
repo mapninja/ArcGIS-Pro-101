@@ -173,35 +173,6 @@ The **Layer tools** provide the ability to Add or change the basemap for the Map
 
 The **Selection tools** Provide ways to select features within a layer interactively, by intersection with other layers, as well as by Attributes. 
 
-
-<!--# Working with CRS
-Here we will examine the default **Coordinate Reference System**, which should currently be sent to **Web Mercator** and we will change it to **Universal Transverse Mercator** to match our study area layer.  
-
-#### Examine the CRS of a data layer
-1. Right-click on the **study area** layer select the Layer Properties from the menu.
-2. Click on the **Source** tab on the left side of the properties panel, and note in the section called **Geometry And Coordinate Reference System** that the CRS of this layer is:  
-
-```EPSG:32630 WGS 84 / UTM zone 30N```  
-
-![](./media/layercrs.png)
-3. Click OK to close the **Layer Properties** Dialog  
-4. On the **Main Menu** Open the **Project Properties** from the **Project** menu.  
-5. Click on the **CRS** tab at the left and note that the project is in a projection called:  
-
-```EPSG:3857 WGS 84 Pseudo-Mercator```   
-
-*This is the projection of the basemap and is the default for the project because the basemap was the first layer that we added to the project.*  
-
-![](./media/projectcrs.png)
-
-#### Change the Project CRS  
-1. Locate the CRS of the **Study_Area** layer in the "**Recently used coordinate reference systems**" section, or type the EPSG code "**32630**" into the Filter box at the top of the **Properties** dialog.  
-![](./media/newprojectcrs.png)
-2. Click on the ```EPSG:32630 WGS 84 / UTM zone 30N``` and then click OK to change the CRS of the Project to the same as the layer **Study_Area**.
-3. Save your changes by clicking on the Save button ![](./media/savebutton.png) on the Project toolbar.  
-
-You should now see that the base map and study area layer in the map canvas have rotated slightly and are now oriented north-south.-->
-
 ## Working with spatial data
 ### Viewing the Attribute Table
 
@@ -229,29 +200,23 @@ As mentioned, above, the **Num_Cases** field in the Deaths layer indicates the n
 
 Our goal in this workshop is to explore the cholera outbreak of 1854 and determine whether there is evidence that the Broad Street pump is the source of the outbreak. To do this we want to spatially allocate all of the death addresses in our data set to the water pump that they are nearest. Often the data that we need for our analysis doesn't exist in the format that we need it in. In this section we will use John Snow's original map of the 1854 cholera outbreak as a source for the locations of the water pumps in our analysis. 
 
-1. On the **Main Menu**, go to **Raster>Georeferencer** to open the **GDAL Georeferencer**
-2. Click on the **Open Raster** button  ![](./media/openraster.png) and browse to the **/data/** folder, select the **snow_map.png** and click **Open**
-3. You should be prompted to set the **Coordinate Reference System** of the map you are adding. Since the map we are georeferencing doesn't have one, use the **CRS** of the Map Document, instead, which is **EPSG:32630**, which is the CRS we want the map to end up in.  
-3. Use the Zoom tool to Zoom to the upper-right corner of the John Snow Map, around the SOHO Square
-4. Click on the Add Point tool ![](./media/addgcp.png) and click on the upper right corner of the outside boundary of SOHO Square, as shown below:  
-![](./media/addpointdialog-drop-shadow.png)  
+1. Browse to the data folder and drag-and-drop the **snow_map.png** image into the Map of your project. 
+2. Click Yes when prompted to "Build pyramids..."
+3. Note that the layer is added to the Table of Contents, but doesn't' not yet appear in the Map Data Frame.
+4. Click on the **snow_map.png** Layer to select it and then click on the Imagery tab to activate the Imagery tools. Click on the Georeference Tool to open the Georeferencing Tools and start georeferencing.
+5. Right-click and "Zoom to..." the **snow_map.png**, then use the mouse scroll button to zoom to the upper left corner of the image, where the **Regent Circus** can be found.
+6. Click on the **Add Control Points** tool and then place a Control Point Link at the center of Regent Circus.
+7. Right-click and "Zoom to..." the **Study_Area** layer. Use the mouse scroll wheel to zoom into the same area of Regent Circus, and place the second GCP link at that location. Note that the map image will automatically "snap" these two GCP links together. 
+8. Use the scroll wheel to zoom out and then into the bottom right corner of the **snow_map.png** layer to find the Intersection of **Oxendon Street & Coventry Street**. Add a Ground Control Point link to the Southeast corner of the intersection.
+9. Toggle off the visibility of the **snow_map.png** and **right-click>Zoom to...** the **Study_Area** layer. 
+10. Locate the corresponding intersection in the now visible basemap and place the second link of the Control Point. 
+11. Toggle the visibility of the **snow_map.png** layer to see that it has "snapped" these two links together, as before. 
+12. Locate and place 3 more **Ground Control Points** (1 in each remaining corner and one near the center).
+13. Click on the **Export Control Points** button and save the control points you have created to your data folder as GCP.TXT.
+14. 
 
-5. Click on the **From Map Canvas** button to switch back to the main QGIS Window
-6. Zoom to the same are of your Map Canvas, *preferably using your mouse wheel or keyboard shortcuts so you don't deactivate the Add Point tool, but you can always go back to the Georeferencer window and reactivate it* 
-7. Place **Ground Control Points** in each corner of the map, switching between the two windows using the **Add Point** tool, as needed. Add a final point somewhere near the center of the map.
-![](./media/georeferencer.png) 
+
  
-8. Click on the **Transformation Settings** button ![](./media/transform.png) and examine the settings. The defaults should be fine, as follows:  
-
-| Setting | Value |
-|---------------------:|--------------------|
-| Transformation Type: | Polynomial 1 |
-| Resample Method: | Nearest Neighbor |
-| Target SRS: | EPSG:4326 - WGS 84 |  
-
-9. Click on the **Start Georeferencing** button ![](./media/starttransform.png) to start the georeferencing of your image and add it to the Map Canvas.
-10. Close the Georeferencer and click OK when prompted to save your **GCP** points.
-
 ### Digitize features from a georeferenced map
 
 If the last section didn't go well, add the ```John_Snow_Map.tif``` from the **/backup_data/**  
