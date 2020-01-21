@@ -209,17 +209,17 @@ Our goal in this workshop is to explore the cholera outbreak of 1854 and determi
 5. Right-click and "Zoom to..." the **snow_map.png**, then use the mouse scroll button to zoom to the upper left corner of the image, where the **Regent Circus** can be found.
 6. Click on the **Add Control Points** tool and then place a Control Point Link at the center of Regent Circus.
 ![](./media/firstgcplink.png)
-7. Right-click and "Zoom to..." the **Study_Area** layer. Use the mouse scroll wheel to zoom into the same area of Regent Circus, and place the second GCP link at that location. Note that the map image will automatically "snap" these two GCP links together. 
+7. Right-click and "Zoom to..." the **Study_Area** layer. Use the mouse scroll wheel to zoom into the same area of Regent Circus, and place the second GCP link at that location. Note that the map image will automatically "snap" these two GCP links together.  
 ![](./media/secondgcplink.png)
 8. Use the scroll wheel to zoom out and then into the bottom right corner of the **snow_map.png** layer to find the Intersection of **Oxendon Street & Coventry Street**. Add a Ground Control Point link to the Southeast corner of the intersection.
 9. Toggle off the visibility of the **snow_map.png** and **right-click>Zoom to...** the **Study_Area** layer. 
 10. Locate the corresponding intersection in the now visible basemap and place the second link of the Control Point. 
 11. Toggle the visibility of the **snow_map.png** layer to see that it has "snapped" these two links together, as before. 
-12. Locate and place 3 more **Ground Control Points** (1 in each remaining corner and one near the center).
+12. Locate and place 3 more **Ground Control Points** (1 in each remaining corner and one near the center).  
 ![](./media/allgcp.png)
 13. Click on the **Export Control Points** button and save the control points you have created to your data folder as GCP.TXT.
 14. Click on the **Save** button of the **Georeference** toolbar, then click on the **Close Georeference** button. 
-15. Browse to the **data** folder using your Windows File Explorer and note that new files have been added to the folder. They include **snow_map.png.pgwx**, which is the "World File" for the image you just georeferenced. As long as this file sits next to the **snow_map.png** file, GIS applications, such as Google Earth Desktop, ArcGIS, QGIS, etc... should now be able to colocate this image with other datasets. 
+15. Browse to the **data** folder using your Windows File Explorer and note that new files have been added to the folder. They include **snow_map.png.pgwx**, which is the "World File" for the image you just georeferenced. As long as this file sits next to the **snow_map.png** file, GIS applications, such as Google Earth Desktop, ArcGIS, QGIS, etc... should now be able to colocate this image with other datasets.  
 ![](./media/worldfile.png)
  
 ### Digitize features from a georeferenced map
@@ -250,14 +250,13 @@ Now we would like to digitize the locations of the **Water Pumps** in the neighb
 5. Locate a Water Pump in the **snow_map.png**  layer and click on it to place the point. 
 6. In the Attribute Table, below, double-click on the new record, under the **Label** field and enter a value for the Label field (we will use the name of the nearest street), and hit **RETURN**.
 7. Repeat for the remaining 12 water pumps in the Snow Map.  
-![](./media/editpoint.png)
+![](./media/editpoint.png)  
 8. Click the **Save** button and confirm to save your edits.
 9. Close the **Create Features** Panel to close the edit session.
 10. Close the Water Pumps Attribute Table.
 11. Zoom to the Water Pumps.
-12. Toggle off the visibility of the **snow_map.png** layer.
-
-![](./media/pumpswithlabels.png)
+12. Toggle off the visibility of the **snow_map.png** layer.  
+![](./media/pumpswithlabels.png)  
 
 
 ### Bonus: Finding an already georeferenced map from DavidRumsey.com
