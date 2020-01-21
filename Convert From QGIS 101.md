@@ -283,7 +283,7 @@ https://maps.georeferencer.com/georeferences/28da2318-c4b3-5f25-83dc-3da27859fea
  
 This URL provides access to the georeferenced map outside of the DavidRumsey.com website.
 
-## Basic spatial data analysis
+## Basic spatial data analysis (Using Geoprocessing Tools in ArcGIS Pro)
 
 ### Voronoi (Thiessen) polygon (Spatial Allocation)
 
@@ -291,7 +291,8 @@ Thiessen polygons allocate space in an area of interest to a single feature per 
 
 1. At the top of **ArcGIS Pro**, click on the **Analysis tab**, then click on the **Tools button**, which will open the **Geoprocessing** panel at the right. 
 2. Using the **Find Tools** box, Search for **Voronoi** and click on the **Create Thiessen Polygons** tool, in the results.
-4. Set the options as: **Input Features:** Water Pumps; **Output Feature Class:** Voronoi: **Output Fields:** All fields.
+4. Set the options as: **Input Features:** Water Pumps; **Output Feature Class:** Voronoi: **Output Fields:** All fields.  
+![](./media/voronoitool.png)  
 5. Click on the **Environments** tab and set the **Extent:** Same as: Study_Area; and click **Run**.  
 ![](media/voronoi.png)  
 
