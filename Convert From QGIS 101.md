@@ -238,28 +238,29 @@ Now we would like to digitize the locations of the **Water Pumps** in the neighb
 ![](./media/newfcstep3.png)   
 
 
-### Add points to your shapefile
+### Add points to your Feature Class
 
 1. Drag-and-Drop the new **pumps** Feature Class into your Map Frame. Note that the layer is added to the Table of Contents, using the alias: **Water Pumps**. 
-2.   
-3. Label the point with the street it is on in the **Feature Attributes pop-up** and click ok to create the feature.
-![](./media/featureattributes.png)
-4. Continue digitizing Until you have captured all 12 water pumps in the map.
-5. Right-click on the water_pumps layer and selelct **Toggle Editing** and save your edits when you are prompted.
+2. With the **Water Pumps** layer selected in the Table of Contents, Click on the Edit Tab, at the top of ArcGIS Pro, to activate the Edit tools.   
+![](./media/edittoolbar.png)  
+3. Right-click on the **Water Pumps** layer and Open the **Attribute Table**. If it is not, already, drag the attribute table to dock it at the bottom of the Map Frame.
+3. Click on the **Create** tool button, and note that a set of templates for each of your vector data layers will appear in as a panel on the right.  
+![](./media/createbutton.png)  
+4. Click on the **Water Pumps** template, in the **Create Features** panel on the right, to select the Water Pump point.  
+5. Locate a Water Pump in the **snow_map.png**  layer and click on it to place the point. 
+6. In the Attribute Table, below, double-click on the new record, under the **Label** field and enter a value for the Label field (we will use the name of the nearest street), and hit **RETURN**.
+7. Repeat for the remaining 12 water pumps in the Snow Map.  
+![](./media/editpoint.png)
+8. Click the **Save** button and confirm to save your edits.
+9. Close the **Create Features** Panel to close the edit session.
+10. Close the Water Pumps Attribute Table.
+11. Zoom to the Water Pumps.
+12. Toggle off the visibility of the **snow_map.png** layer.
 
-### Labels
-
-1. Click on the **water_pumps** layer to activate it in the **Layer Styling** panel
-2. Click on the **Label** tab of the **Layer Styling** panel
-3. Change the Label option to **Single labels**
-4. Set **Label with:** to the 'label' field.
-5. Increase the **Text Size** to **14**
-6. Click on Buffer tab and enable the **Draw text buffer** option. 
-
-![](./media/labels.png)
+![](./media/pumpswithlabels.png)
 
 
-### Finding an already georeferenced map from DavidRumsey.com
+### Bonus: Finding an already georeferenced map from DavidRumsey.com
 
 There are many venues for searching for old maps as sources for spatial data and I've listed a few of our favorites, below. Of course, there are many considerations of scale, authority, projections, etc... when using a scanned map as a data source, it is possible to scan and georeference just about any map you can find reference data (another map to georeference to) for.
 
@@ -283,34 +284,13 @@ https://maps.georeferencer.com/georeferences/28da2318-c4b3-5f25-83dc-3da27859fea
  
 This URL provides access to the georeferenced map outside of the DavidRumsey.com website.
 
-1. Select the WMTS URL, above, and copy it to your clipboard using right-click copy, or keyboard shortcuts, if you know them.  
-2. On the Main Menu **Layer>Add Layer>Add WMS/WMTS Layer** to open the **Data Source Manager**
-3. Click on the **New** button to open the **Create a New WMS/WMTS Connection** dialog:  
-
-| Setting | Value |
-|--------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Name: | Gegend Map |
-| URL: | ```https://maps.georeferencer.com/georeferences/28da2318-c4b3-5f25-83dc-3da27859fea2/2019-02-19T17:27:12.514288Z/wmts?key=mpIMvCWIYHCcIzNaqUSo&SERVICE=WMTS&REQUEST=GetCapabilities``` |   
-
-![](./media/createwmtsconnect.png)   
-
-4. Click OK to dismiss the dialog and save the connection  
-5. Click **Connect**  
-![](./media/connectwmts.png)    
-
-6. In the **Tilesets** tab, highlight the Gegend map WMTS layer item at the top and click **Add & Close** to close the dialog and return to the **QGIS Map Canvas**  
-7. **Right-click** on the **Gegend von London 1853** layer in the **Layer panel** and select **Zoom to layer**  
-8. Use the **Navigation Tools** to explore the map service at several different scales and extents.  
-
-![](./media/gegendWMTS-drop-shadow.png)
-
 ## Basic spatial data analysis
 
 ### Voronoi (Thiessen) polygon (Spatial Allocation)
 
 Thiessen polygons allocate space in an area of interest to a single feature per polygon. That is, within a Thiessen polygon, all other features are closer to the point that was used to generate that polygon than to any other point in the feature set. In this case, we will create a set of Thiessen polygons based upon the locations of the Water Pumps in our project. This will allow us to easily allocate all of the points in our death addresses dataset to the water pump that they are nearest using a simple spatial join.
 
-1. On the Main Menu go to menu go to **Processing \> Toolbox**
+1. On the **Tools Tape** at the top of **ArcGIS Pro**, click on the **Analysis tab**, then click on the **Tools button** . 
 2. Go to the **Processing Toolbox Window** and change the view from **Simplified Interface** to **Advanced Interface.**
 3. Search for **Voronoi.**
 4. **Double–click** the **Voronoi polygons** tool under **Grass commands.**
