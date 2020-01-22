@@ -316,9 +316,9 @@ Finally, we would like to summarize the deaths in the outbreak, grouping our sum
 1. With the **Deaths_Allocated Attribute Table** still open, right-click on the header for the **Num_Cases** column and select **Summarize** to open the **Summary Statistics** Geoprocessing tool.
 2. Use the drop-downs to set the Statistics Fields as shown, below:  
 ![](./media/summarystats.png)  
-3. Set the **Case field** to the **Label** column, in order to group the summary by nearest **Water Pump**
-
-
+3. Set the **Case field** to the **Label** column, in order to group the summary by nearest **Water Pump**, and click **Run**.
+4. Right-click the resulting **Deaths_Allocated_Statistics** table and Open it. Right-click on the **SUM_Num_Cases** field header and select **Sort Descending**  
+![](./media/summarystatsresult.png)  
 
 ## Basic Measures of Spatial Central Tendency
 
