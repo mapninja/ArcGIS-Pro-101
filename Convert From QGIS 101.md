@@ -205,12 +205,12 @@ Our goal in this workshop is to explore the cholera outbreak of 1854 and determi
 ![](./media/pyramids.png)
 3. Note that the layer is added to the Table of Contents, but doesn't' not yet appear in the Map Data Frame.
 4. Click on the **snow_map.png** Layer to select it and then click on the Imagery tab to activate the Imagery tools. Click on the Georeference Tool to open the Georeferencing Tools and start georeferencing.  
-![](./media/georeferencebutton.png)
+![](./media/georeferencebutton.png)  
 5. Right-click and "Zoom to..." the **snow_map.png**, then use the mouse scroll button to zoom to the upper left corner of the image, where the **Regent Circus** can be found.
-6. Click on the **Add Control Points** tool and then place a Control Point Link at the center of Regent Circus.
-![](./media/firstgcplink.png)
+6. Click on the **Add Control Points** tool and then place a Control Point Link at the center of Regent Circus.  
+![](./media/firstgcplink.png)  
 7. Right-click and "Zoom to..." the **Study_Area** layer. Use the mouse scroll wheel to zoom into the same area of Regent Circus, and place the second GCP link at that location. Note that the map image will automatically "snap" these two GCP links together.  
-![](./media/secondgcplink.png)
+![](./media/secondgcplink.png)  
 8. Use the scroll wheel to zoom out and then into the bottom right corner of the **snow_map.png** layer to find the Intersection of **Oxendon Street & Coventry Street**. Add a Ground Control Point link to the Southeast corner of the intersection.
 9. Toggle off the visibility of the **snow_map.png** and **right-click>Zoom to...** the **Study_Area** layer. 
 10. Locate the corresponding intersection in the now visible basemap and place the second link of the Control Point. 
