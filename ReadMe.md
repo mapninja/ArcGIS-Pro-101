@@ -323,20 +323,17 @@ Finally, we would like to summarize the deaths in the outbreak, grouping our sum
 
 ### Spatial Mean (Mean Center)
 
-The Mean Center is the average x- and y-coordinate of all the features in the study area. It's useful for tracking changes in the distribution or for comparing the distributions of different types of features. Here, we will use the Mean Center to highlight the distribution of deaths around the Broad Street Pump.  
+The Mean Center is defined by the average x- and y-coordinate of all the features in the study area. It's useful for tracking changes in the distribution or for comparing the distributions of different types of features. Here, we will use the Mean Center to highlight the distribution of deaths around the Broad Street Pump.  
 
 First, we will calculate a simple spatial mean. This is simply the mean center of the **distribution of locations** 
 
-1. On the pull-down menu go to menu go to **Vector \> Analysis \> Mean
-coordinate(s)**  
-![](media/image010-drop-shadow.png)  
+1. Click on the Analysis>Tools button to open the **Geoprocessing Panel**
+2. In the *Find Tools* Search Box, search for "Mean Center"
+3. The first result should be the **Mean Center** geoprocessing script. Click to **open** it's dialog.
+4. Use **Deaths_Allocated** as the **Input Feature Class** and check that the **Output Feature Class** is going to your **Default.gdb** and has a meaningful name. Click **Run**.
 
-1. Select **Deaths_Allocated** as the Input vector layer.
-2. Leave the **Weight field** and **Unique ID field** as **Optional.**
-3. **Click Browse** to **save** the Output Shapefile as:
-    **Deaths\_Spatial\_Mean** to the **Data** Folder**.**
-4. **Click OK** to calculate the **Mean Center** and **Close**.
-5. Change the **Symbology** for the **Deaths\_Spatial\_Mean layer** to something that contrasts with the other symbologies.
+A new Layer will be added to your Map with a single feature, representing the *Spatial Mean* of the distribution of *addresses* at which deaths took place. That is, we have determined the *Spatial Mean of the effected addresses*, but not the Spatial Mean of all of the deaths in the neighborhood. We can now use the Num_Cases field to calculate the *Spatial Mean* of all deaths in the outbreak, by calculating a **Weighted Spatial Mean**
+
 
 ### Weighted Spatial Mean
 
@@ -451,7 +448,6 @@ Add Neatline
 Add Text
 
 Print to PNG
-
 
 
 
