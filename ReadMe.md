@@ -382,48 +382,40 @@ Return to the **Standard Distance** Tool and run it again, this time using your 
 
 ![](media/standarddistance.png)
 
+The result should be a circle, whose diameter encompasses 68% of the **Deaths** in our dataset.
+
+#### Bonus:  
+Run the **Standard Distance** again, this time without a **Weight** field and observe the results. Now you are calculating the Standard Distance based upon the **LOCATIONS**. What effect has that had on the Standard Distance? Why?
+
+![](media/sdnoweight.png)
+
 ### Creating a surface from Point Data to Highlight “Hotspots”
 
-Hotspot mapping is a popular technique for quickly identifying "Hotspots" or other spatial structures in your data. 
+Hotspot mapping is a popular technique for quickly identifying "Hotspots" or other spatial structures in your data. At it simplest, you are having the software "interpolate" the values of the entire study area, based upon the discrete samples that our **Deaths\_Allocated\_UTM** represent. 
 
 #### Kernel Density
 
 The Kernel Density Tool calculates a magnitude per unit area from the point features using a kernel function to fit a smoothly tapered surface to each point. The result is a raster dataset which can reveal “hotspots” in the array of point data.
 
+1. Toggle off the visibility of all but your **Water Pumps** layer
+2. Return to the Geoprocessing Panel and **Search** for "**Kernel Density**", then click to launch the tool
+3. Use the following settings, and click **Run**:  
 
-![](media/image015-drop-shadow.png)
+|              Setting: | Value                  |
+|----------------------:|------------------------|
+| Input point features: | Deaths\_Allocated\_UTM |
+|     Population field: | Num_Cases              |
+|        Output raster: | DeathTopo              |
+|     Output cell size: | 1                      |
+|        Search radius: | 50                     |
+|           Area units: | Square kilometers      |
+|   Output cell values: | Densities              |
+|               Method: | PLANAR                 |  
 
-Set the **Cellsize** to 10 (this is also in meters)
+Note that the "Hottest" spot on the resulting map lies directly beneath the **Broad Street Pump**
 
-1.  On the **Kernel Option click** the 3 dots and select **Save to File.**
-
-2.  **Save** the **Output Raster** to the **Data Folder** as **Kernel_Density.**
-
-3.  **Click Run** to run the Kernel Density tool.
-
-4.  **Right Click** the **Kernel_Density layer** and **open** its
-    **properties**.
-
-![](media/image016-drop-shadow.png)
-
-**Go** to the **Style Tab** and select
-
-1.  **Render Type:** Singleband gray
-
-    1.  **Color Gradient:** White to black
-
-    2.  **Contrast enhancement:** Stretch to MinMax.
-
-    3.  **Load min/max values:** Select min/max and click load.
-
-    4.  **Hue:** Check Colorize and select a color of your choice
-
-    5.  **Resampling:** Zoomed in **Bilinear.**
-
-    6.  **Click OK**
-
-![](media/image017-drop-shadow.png)
-
+![](media/deathtopo.png)
+ 
 ## Creating a Basic Map Layout (in process)
 
 Toggle off uneeded layers & Arrange layers in order of visibility
