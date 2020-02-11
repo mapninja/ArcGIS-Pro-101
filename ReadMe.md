@@ -333,21 +333,25 @@ First, we will calculate a simple spatial mean. This is simply the mean center o
 4. Use **Deaths_Allocated** as the **Input Feature Class** and check that the **Output Feature Class** is going to your **Default.gdb** and has a meaningful name. Click **Run**.
 
 A new Layer will be added to your Map with a single feature, representing the *Spatial Mean* of the distribution of *addresses* at which deaths took place. That is, we have determined the *Spatial Mean of the effected addresses*, but not the Spatial Mean of all of the deaths in the neighborhood. We can now use the Num_Cases field to calculate the *Spatial Mean* of all deaths in the outbreak, by calculating a **Weighted Spatial Mean**
-
+![](media/spatialmean.png)
 
 ### Weighted Spatial Mean
 
-1. **Run** the **Mean Center tool** again, this time assigning the
-   **Num_Cases** field as the **Weight Field**.
-2. **Save** the **Output Shapefile** to the **Data** folder and name it **Deaths_Weighted_Spatial_Mean**.
-3. **Apply a symbology** to the **Deaths_Weighted_Spatial_Mean layer**.
+1. **Run** the **Mean Center tool** again, this time assigning the **Num_Cases** field as the **Weight Field**. Rename the **Output Feature Class** by adding a "W" to the end of the filename of the previous run.
+2. Right-click on the color patch for the resulting layer and select a color that contrasts with the color of the previous, unweighted, Spatial Mean. 
+
+Note that, while the change is slight (this is a relatively small and uniform distribution of points), there is a noticeably movement of the **Weighted Spatial Mean**, towards the Broad Street Pump. 
+
+![](media/weightedmean.png)
 
 #### Bonus:  
-Set the "Unique ID" option to the "label" field and observe the results. This has the effect of "casing" the spatial mean, based upon the spatial allocation that we did earlier.
+Run the Weighted Spatial Mean again, this time setting the **Case Field** option to the "**Label**" field and observe the results. This has the effect of "casing" the spatial mean, based upon the spatial allocation that we did earlier. Do you notice anything about the general trend among all of the Spatial Means, cased by Water Pump?
+
+![](media/casedmeans.png)
 
 ### Standard Distance
 
-The Standrad Distance is the spatial statistics equivalent of the standard deviation. It describes the radius around the spatial mean (or weighted spatial mean), which contains 68% of locations in your dataset. It can be very useful for working with GPS data.
+The Standard Distance is the spatial statistics equivalent of the standard deviation. It describes the radius around the spatial mean (or weighted spatial mean), which contains 68% of locations in your dataset. It can be very useful for working with GPS data.
 
 ![](media/image011-drop-shadow.png)
 
