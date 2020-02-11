@@ -1,5 +1,7 @@
 # ArcGIS Pro 101
 
+https://mapninja.github.io/ArcGIS-Pro-101/
+
 
 Stacey Maples – Geospatial Manager – Stanford Geospatial Center – stacemaples@stanford.edu
 
@@ -353,22 +355,9 @@ Run the Weighted Spatial Mean again, this time setting the **Case Field** option
 
 The Standard Distance is the spatial statistics equivalent of the standard deviation. It describes the radius around the spatial mean (or weighted spatial mean), which contains 68% of locations in your dataset. It can be very useful for working with GPS data.
 
-![](media/image011-drop-shadow.png)
-
-On the pull-down menu go to menu go to **Processing \> Toolbox** to open the
-**Processing Toolbox Window.**
-
-![](media/image012-drop-shadow.png)
-
-On the **Processing Toolbox Window type** to **search**: **Spatial point pattern
-analysis** and **double click** to open the tool window.
-
-1.  Select **Death Addresses** as the **Point** layer.
-
-2.  Click the 3 dots and **Select** Save to a file.
-
-3.  **Give** an appropriate name and **Save** the **3 Output Files** on your
-    **Data** folder.
+1. Return to the Geoprocessing Tab, and click the **Back Arrow** to return to the **Search Results**. 
+2. Search for "**Standard Distance**"
+3. 
 
 ![](media/image013-drop-shadow.png)
 
