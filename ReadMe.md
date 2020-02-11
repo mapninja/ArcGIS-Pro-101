@@ -356,35 +356,41 @@ Run the Weighted Spatial Mean again, this time setting the **Case Field** option
 The Standard Distance is the spatial statistics equivalent of the standard deviation. It describes the radius around the spatial mean (or weighted spatial mean), which contains 68% of locations in your dataset. It can be very useful for working with GPS data.
 
 1. Return to the Geoprocessing Tab, and click the **Back Arrow** to return to the **Search Results**. 
-2. Search for "**Standard Distance**"
-3. 
+2. Search for "**Standard Distance**" and click on teh resulting **Standard Distance script tool**
+3. Use your **Deaths_Allocated** layer as the **Input Feature Class**
+4. Add a "**1**" to the end of the name of the **Output Standard Distance Feature Class** and confirm that the **Circle Size** is set to **1 standard deviation**
+5. Use **Num_Cases** as the **Weight Field** and click **Run**.
 
-![](media/image013-drop-shadow.png)
+![](media/oddsd.png)
 
-**Click Run** to calculate the **Standard Distance, Mean Centre and Bounding
-Box.**
+The resulting Standard Distance circle, is not a circle. This is because we used unprojected data for the calculation, which geoprocessing tools that measure distance and area often have trouble with. If you look to the bottom of the Geoprocessing panel, you will notice that the **Standard Distance completed with warnings** and that hovering your mouse reveals more information about the error, including a clickable link.  
 
->   The red dot is the mean center (no weight field; the large circle is the
->   standard distance, which gives an indication of how closely the points are
->   distributed around the mean center; and the rectangle is the bounding box,
->   describing the smallest possible rectangle which will still enclose all the
->   points.
+![](media/projectionwarning.png)
+
+### Export your deaths data with a new projection
+
+Here, we will export our **Deaths\_Allocated** dataset to a new version, while translating to a Projected Coordinate System that is appropriate for measuring distance at the scale of our project. 
+
+1. Right-click on the **Deaths\_Allocated** layer, in the **Table of Contents** and go to **Data>Export Features**
+2. Name the **Output Feature Class** **Deaths\_Allocated\_UTM** 
+3. Click on the **Environments Tab**, at the top of the Geoprocessing Panel. 
+4. Click on the **Globe icon** at the right of the drop-down and expand the Layers section. 
+5. Select the **WGS 1984 UTM Zone 30N** projection and click **OK**.
+6. Click **Run** to export the new Feature Class
+
+Return to the **Standard Distance** Tool and run it again, this time using your **Deaths\_Allocated\_UTM** as the **Input Feature Class**
+
+![](media/standarddistance.png)
 
 ### Creating a surface from Point Data to Highlight “Hotspots”
 
-![media/image14.png](media/image014-drop-shadow.png)
+Hotspot mapping is a popular technique for quickly identifying "Hotspots" or other spatial structures in your data. 
 
 #### Kernel Density
 
 The Kernel Density Tool calculates a magnitude per unit area from the point features using a kernel function to fit a smoothly tapered surface to each point. The result is a raster dataset which can reveal “hotspots” in the array of point data.
 
-1.  Go to the **Processing Toolbox Window** and **type** to search **Kernel Density Estimation (SAGA)** and **double click** to open the tool window.
-2.  **Select** the **Deaths_Allocated** layer as the **Points** features.
-3.  Select **Num_Cases** as the **Weight Field.**
-4.  Set the **Radius** option to **50** (this is in meters).
-5.  On the **Output Extent** option, click the 3 dots and select **Use
-    layer/canvas extent.**
-6.  On the resulting window search for **Study Area** and **Click OK.**
+
 ![](media/image015-drop-shadow.png)
 
 Set the **Cellsize** to 10 (this is also in meters)
