@@ -420,17 +420,31 @@ Note that the "Hottest" spot on the resulting map lies directly beneath the **Br
 
 Toggle off uneeded layers & Arrange layers in order of visibility
 
+
+
+Switch to Layout Mode
+
+
+
+Add Layout
+
+Add Data Frame
+
+Activate Map
+
 Change Project CRS to Basemap CRS
 
 Make Symbology & Label adjustments
 
-Rename Layers
+Add an SVG Symbol
+https://publicdomainvectors.org/en/free-clipart/Vector-drawing-of-water-pollution/6505.html
 
-Switch to Layout Mode
-
-Add Map
+Add & Format Text and Graphics  
+http://saganipsum.com/
 
 Add Legend
+
+Rename Layers
 
 Add Scale
 
