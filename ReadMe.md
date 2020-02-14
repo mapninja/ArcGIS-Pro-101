@@ -418,41 +418,59 @@ Note that the "Hottest" spot on the resulting map lies directly beneath the **Br
  
 ## Creating a Basic Map Layout (in process)
 
-Toggle off uneeded layers & Arrange layers in order of visibility
 
+### Add a Layout & Data Frame
 
+1. Save your work if you haven't in a while.
+2. On the Insert Tab, at top of ArcGIS Pro, Click on the **New Layout** button and select **ANSI - Landscape> Letter** to add a new layout to your ArcGIS Pro Project.
+3. On the Insert Tab, again, click the **Map Frame** tool, select your John Snow map from the top row. 
+4. Drag a squar(ish) box that fills the page as much as possible to place the Data Frame on the page.
 
-Switch to Layout Mode
+### Activate the Map
 
+In order to edit and adjust the map view, you need to activate the map in your layout, so that navigation and other tools are applied **WITHIN** the **Data Frame**, rather than on the **Layout Page**, itself.
 
+1. Click on the **Layout Tab**, then click on the **Activate** button, to make your Data Frame active.
+2. Use your mouse and scroll wheel to zoom into the central part of the map so the the edges of the Voronoi layer don't display. Alternatively, you can Right-Click on the **DeathTopo** layer and **Zoom to layer**
+3. Toggle on and off your layers until the following are toggled on and visible, in the following order:  
 
-Add Layout
+ * **Deaths\_Allocated\_Mean\_CenterW**
+ * **Water Pumps**
+ * **Deaths\-Allocated\_UTM**
+ * **Voronoi**
+ * **Light Gray Base**
 
-Add Data Frame
+4. Use Ctrl-clicks to select these layers and then right-click>Group them. Rename the Group "In Map"
+5. Remove the remaining layers by Ctrl-click selecting and right-click>Remove.
 
-Activate Map
-
-Change Project CRS to Basemap CRS
-
-Make Symbology & Label adjustments
-
-Add an SVG Symbol
+### Add an SVG Symbol
 https://publicdomainvectors.org/en/free-clipart/Vector-drawing-of-water-pollution/6505.html
 
-Add & Format Text and Graphics  
+1. With the Map Frame still activated, Select the **Deaths\_Allocated\_Mean\_CenterW** layer and Click on the Appearance Tab
+2. Click on the **Symbology** button to open the Symbology Panel.
+3. In the Symbology Panel, click on the current **Symbol** point to open it's properties.
+4. Change to the **Properties** Tab, then click on the **Layers** button to begin importing a new symbol.  
+![](media/formatpoint.png)
+5. Click on the **File...** button, browse to your **/data/** folder and select the **frackingwater.svg** and click **OK** to open it. 
+6. Set the **Size** to 48pt
+7. Change teh Color to Blue
+8. Change the **Element** target to the water drop (you may have to scroll down to see it), then change its color to **Yellow**.
+9. Click **Apply** to commit the changes.
+
+
+
+### Add & Format Text and Graphics  
 http://saganipsum.com/
 
-Add Legend
+### Add & Format a Legend
 
-Rename Layers
+### Add Scale
 
-Add Scale
+### Add Neatline
 
-Add Neatline
+### Add Text
 
-Add Text
-
-Print to PNG
+### Print to PNG
 
 
 
