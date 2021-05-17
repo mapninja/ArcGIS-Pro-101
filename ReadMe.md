@@ -9,7 +9,7 @@ David Medeiros – GIS Instruction & Support Specialist - Stanford Geospatial Ce
 
 ## Overview
 
-This workshop aims to accomplish two things: Introduce participants to basic vocabulary, concepts and techniques for working with spatial data in research and introduce the interface and tools in ArcGIS Pro, a desktop GIS software distributed by Esri. This introductory session will focus upon the fundamental concepts and skills needed to begin using Geographic Information Systems software for the exploration and analysis of spatial data using the QGIS platform.  
+This workshop aims to accomplish two things: Introduce participants to basic vocabulary, concepts and techniques for working with spatial data in research and introduce the interface and tools in ArcGIS Pro, a desktop GIS software distributed by Esri. This introductory session will focus upon the fundamental concepts and skills needed to begin using Geographic Information Systems software for the exploration and analysis of spatial data using the QGIS platform.  73787
 
 Topics will include:  
 
@@ -198,14 +198,24 @@ As mentioned, above, the **Num_Cases** field in the Deaths layer indicates the n
 
 ## Creating Spatial Data
 
-### Georeference a map  
-
+### Adding a reference layer from ArcGIS Online
 Our goal in this workshop is to explore the cholera outbreak of 1854 and determine whether there is evidence that the Broad Street pump is the source of the outbreak. To do this we want to spatially allocate all of the death addresses in our data set to the water pump that they are nearest. Often the data that we need for our analysis doesn't exist in the format that we need it in. In this section we will use John Snow's original map of the 1854 cholera outbreak as a source for the locations of the water pumps in our analysis. 
+
+Here we will search for, and add, a web map service from ArcGIS Online. THe map we are adding has been georeferenced, tiled and published so that it can be added to any GIS application that supports OGC web mapping services. 
+
+1. In the Catalog panel, Click on the **Portal** tab, then on the "All Portal" icon![](./media/allportal.png)   
+2. Search for "John Snow's Map" And hover over the following result to see the details, noting that it was published by Yalemaps.  
+![](./media/allportalsearch.png)
+3. This is a "Tiled Map Service" published to ArcGIS Online. Right-click on the item and Add to current map. 
+
+
+### Georeferencing a map (For longer or self-paced workshops)
+Above you added an historical map from a service on ArcGIS Online. That ma has been "Georeferenced" so that it can be colocated with other spatial data. In the following section, we outline the process of georeferencing a scanned image of a map. 
 
 1. Browse to the data folder and drag-and-drop the **snow_map.png** image into the Map of your project. 
 2. Click Yes when prompted to "Build pyramids..."
 ![](./media/pyramids.png)
-3. Note that the layer is added to the Table of Contents, but doesn't' not yet appear in the Map Data Frame.
+3. Note that the layer is added to the Table of Contents, but does not yet appear in the Map Data Frame.
 4. Click on the **snow_map.png** Layer to select it and then click on the Imagery tab to activate the Imagery tools. Click on the Georeference Tool to open the Georeferencing Tools and start georeferencing.  
 ![](./media/georeferencebutton.png)  
 5. Right-click and "Zoom to..." the **snow_map.png**, then use the mouse scroll button to zoom to the upper left corner of the image, where the **Regent Circus** can be found.
