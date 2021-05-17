@@ -25,7 +25,7 @@ Stanford Geospatial Center website - http://gis.stanford.edu/
 
 Stanford GIS Listserv - https://mailman.stanford.edu/mailman/listinfo/stanfordgis
 
-
+More Tutorials from Esri at: https://learn.arcgis.com/en/gallery/
 
 Download Tutorial Data
 
